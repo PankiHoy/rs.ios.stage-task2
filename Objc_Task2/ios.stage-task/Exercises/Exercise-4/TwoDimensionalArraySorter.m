@@ -21,7 +21,8 @@
     if (arrayOfDigits.count>0 && arrayOfStrings.count>0) {
         return @[[self mergeSortArray:arrayOfDigits], [self mergeSortArray:arrayOfStrings]];
     } else if (arrayOfDigits.count==0) {
-        return [self mergeSortArray:arrayOfStrings];
+        [arrayOfStrings sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        return arrayOfStrings;
     } else {
         return [self mergeSortArray:arrayOfDigits];
     }
@@ -48,7 +49,7 @@
             id leftValue = [leftArray objectAtIndex:i];
             id rightValue = [rightArray objectAtIndex:e];
             
-            if ([leftValue compare:rightValue] == NSOrderedAscending) {
+            if ([leftValue compare:rightValue] == NSOrderedDescending) {
                 [returnArray addObject: [leftArray objectAtIndex:i++]];
             } else {
                 [returnArray addObject: [rightArray objectAtIndex:e++]];
