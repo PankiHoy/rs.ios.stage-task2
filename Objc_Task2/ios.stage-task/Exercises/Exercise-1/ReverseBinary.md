@@ -5,8 +5,8 @@ Function accepts unsigned 8 bits integer and returns its binary reverse (padded 
 ### Example 1
 ```
 n = 3
-binary representation = 0000 0011
-reversed = 1100 0000
+binary representation = 1001 0011
+reversed = 1100 1001
 result = 192
 ```
 
